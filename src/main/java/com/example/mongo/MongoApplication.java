@@ -22,7 +22,7 @@ public class MongoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MongoApplication.class, args);
 	}
-        @Bean
+        /*@Bean
         CommandLineRunner runner(StudentRepository repository, MongoTemplate mongoTempalte){
             return args ->{
                 Address address = new Address("Brasil", "Rio de Janeiro", "25555-210");
@@ -44,7 +44,7 @@ public class MongoApplication {
                     repository.insert(student);} );
                 
             };
-        }
+        }*/
 
     private void usingMongoTemplateAndWuery(String email, MongoTemplate mongoTempalte, Student student, StudentRepository repository) throws IllegalStateException {
         Query query = new Query();
