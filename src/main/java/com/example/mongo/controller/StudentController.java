@@ -5,7 +5,6 @@ import com.example.mongo.model.Student;
 import com.example.mongo.service.StudentService;
 import java.util.List;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,7 +42,6 @@ public class StudentController {
             @RequestParam(required = false) String email,
             @RequestParam(required = false) String gender,
             @RequestParam(required = false)List<String>favouriteSubjects){
-        
         studentService.updateStudent(studentId,firstName,lastName,email,gender,favouriteSubjects);
     }
     

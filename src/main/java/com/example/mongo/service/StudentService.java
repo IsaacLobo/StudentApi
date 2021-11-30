@@ -23,8 +23,7 @@ public class StudentService {
 
     public void addNewStudent(Student student) {
         Optional<Student> studentByEmail = studentRepository.findStudentByEmail(student.getEmail());
-        if (studentByEmail.isPresent())
-           {
+        if (studentByEmail.isPresent()){
                throw new IllegalStateException("Email already exists");
            }
         student.setCreated(LocalDateTime.now());
@@ -76,10 +75,11 @@ public class StudentService {
                 break;
             }
         }
-       /* if(!favouriteSubjects.isEmpty()){
+       if(!favouriteSubjects.isEmpty()){
             List<String> favourite = student.getFavouriteSubjects();
-            favourite.addAll(favourite);
-        }*/
+            favourite.addAll(favouriteSubjects);
+            student.setFavouriteSubjects(favourite);
+        }
         studentRepository.save(student);
         
     }
